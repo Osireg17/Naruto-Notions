@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('/img/luffy-thinking.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Create a New Notion</h1>
+                            <span class="subheading">Have questions? I have answers.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>If your thinking as hard as luffy is at the moment I believe it's best you write it down</p>
+                        <div class="my-5">
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form id="contactForm"  action="/posts/store" method="post" enctype="multipart/form-data">
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" type="text" placeholder="Title" data-sb-validations="required" name="title"/>
+                                    <label for="title">Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A Title is required.</div>
+                                </div>
+                                
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="body" placeholder="Enter your thought here..." style="height: 15rem" data-sb-validations="required" name="body" required></textarea>
+                                    <label for="body">Body</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A thought is required</div>
+                                </div>
+                                <br/>
+                                <div class="form-floating">
+                                    <input class="form-control" id="author" type="text" placeholder="Author" data-sb-validations="required" name="author" required/>
+                                    <label for="author">Author</label>
+                                    <div class="invalid-feedback" data-sb-feedback="author:required">An Author is required.</div>
+                                </div>
+                                <br/>
+                                <div class="form-floating">
+                                    <input class="form-control" id="createdAt" type="date" required pattern="\d{4}-\d{2}-\d{2}" data-sb-validations="required" name="createdAt">
+                                    <label for="message">Date</label>
+                                    <!-- <script>
+                                        date = new Date().toLocaleDateString('en-GB');
+                                        document.write(date);
+                                    </script> -->
+                                </div>
+                                <br />
+                                <div class="control-group">
+                                    <div class="form-floating">
+                                        <input class="form-group floating-label-form-group-controls" id="image" type="file" name="image" >
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary" id="sendMessageButton" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <%- include('layouts/footer'); -%>
+        <!-- Bootstrap core JS-->
+        <%- include('layouts/scripts'); -%>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
