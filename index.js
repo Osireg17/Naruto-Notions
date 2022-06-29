@@ -22,19 +22,16 @@ const home = require('./controllers/home');
 const getPost = require('./controllers/getPost');
 const storePost = require('./controllers/storePost');
 const Validate = require('./controllers/validate');
+const newUser = require('./controllers/newUser');
+const storeUser = require('./controllers/storeUser');
 
 app.get('/', home)
-
-
-
 app.get('/post/:id', getPost)
-
-
 app.post('/posts/store', storePost)
-
-
+app.post('/users/register',storeUser)
 app.get('/posts/new',newPost)
-    app.use('/posts/store',Validate);
+app.use('/posts/store',Validate);
+app.get('/auth/register', newUser)
 
 
 

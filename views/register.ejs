@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('/img/gojo-welcome.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Welcome Weebo</h1>
+                            <span class="subheading">Register for a new account below</span>
+                            <div class="bg-image hover-zoom">
+                                <p class="fs-1">&#8595</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h1>Register a new account</h1>
+                <div class="my-5">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form id="contactForm"  action="/users/register" method="post" enctype="multipart/form-data">
+
+                        <div class="form-floating">
+                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" data-sb-validations="required" required>
+                            <label for="title">Email</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">An email is required</div>
+                        </div>
+
+                        <div class="form-floating">
+                            <input type="text" class="form-control" placeholder="Username" id="username" name="username" data-sb-validations="required" required>
+                            <label for="title">Username</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">An username is required</div>
+                        </div>
+                        
+                        <div class="form-floating">
+                            <input type="password" class="form-control" placeholder="Password" id="password" name="password" data-sb-validations="required" required>
+                            <label for="title">Password</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A password is required</div>
+                        <br/>
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                        <!-- Submit Button-->
+                        <button class="btn btn-primary" id="sendMessageButton" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+        <%- include('layouts/footer'); -%>
+        <!-- Bootstrap core JS-->
+        <%- include('layouts/scripts'); -%>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
