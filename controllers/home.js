@@ -5,6 +5,6 @@ module.exports = async (req, res) => {
     const blogPosts = await BlogPost.find({})
     console.log(req.session);
     res.render('index', {
-        blogPosts: blogPosts
+        blogPosts: blogPosts,
     });
 }

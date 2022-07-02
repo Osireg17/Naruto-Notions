@@ -5,20 +5,34 @@
         <!-- Navigation-->
         <%- include('layouts/navbar'); -%>
         <!-- Page Header-->
+        <% if (!loggedIn) { %>
         <header class="masthead" style="background-image: url('img/anime-home.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                             <h1>Naruto Notions</h1>
-                            <span class="subheading">An Anime Blogging website where anime newbs or anime otaku's can come and discuss, share and give their opinion on the latest anime </span>
+                            <span class="subheading">An Anime Blogging Website where Anime newbs as well as Anime Otaku can come and discuss, share and give their opinions on the latest Anime</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+        <% } %>
         <!-- Main Content-->
         <% if (loggedIn) { %>
+            <header class="masthead" style="background-image: url('img/your-name.jpeg')">
+                <div class="container position-relative px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <div class="site-heading">
+                                <h1>Welcome Back</h1>
+                                <span class="subheading"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
