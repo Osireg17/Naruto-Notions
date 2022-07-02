@@ -6,6 +6,11 @@ const BlogPost = require('./models/blogposts');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const newPost = require('./controllers/newPost');
+const expressSession = require('express-session');
+
+app.use(expressSession({
+    secret: 'BatMan Child',
+}));
 
 
 const app = express();
@@ -24,6 +29,8 @@ const storePost = require('./controllers/storePost');
 const Validate = require('./controllers/validate');
 const newUser = require('./controllers/newUser');
 const storeUser = require('./controllers/storeUser');
+const login = require('./controllers/login');
+const loginUser = require('./controllers/loginUser');
 
 app.get('/', home)
 app.get('/post/:id', getPost)
@@ -32,6 +39,8 @@ app.post('/users/register',storeUser)
 app.get('/posts/new',newPost)
 app.use('/posts/store',Validate);
 app.get('/auth/register', newUser)
+app.get('/auth/login', login)
+app.post('/users/login', loginUser)
 
 
 
