@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const newPost = require('./controllers/newPost');
 const session = require('express-session');
+const flash = require('connect-flash');
 
 ;
 
@@ -45,6 +46,8 @@ app.use('*', (req, res, next) => {
     loggedIn = req.session.user;
     next();
 })
+
+app.use(flash());
 
 app.get('/', home)
 app.get('/post/:id', getPost)
