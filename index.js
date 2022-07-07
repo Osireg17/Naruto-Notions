@@ -51,7 +51,7 @@ app.use(flash());
 
 app.get('/', home)
 app.get('/post/:id', getPost)
-app.post('/posts/store',Middleware, storePost)
+app.post('/posts/store', storePost)
 app.get('/posts/new',Middleware,newPost)
 app.use('/posts/store',Validate);
 app.get('/auth/register', RedirectLogin,newUser)

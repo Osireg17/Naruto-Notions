@@ -4,8 +4,7 @@ module.exports = (req, res, next) => {
     User.findById(req.session.user, (err, user) => {
         if(err || !user){
             return res.redirect('/');
-
-            next();
         }
+        next();
 });
 }
