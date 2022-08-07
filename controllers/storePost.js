@@ -12,3 +12,7 @@ module.exports = async (req, res) => { // req.body is the data that is sent from
         });
     res.redirect('/');
     }
+
+
+
+// "bcrypt": "^5.0.1",
