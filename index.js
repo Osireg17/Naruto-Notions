@@ -72,10 +72,8 @@ app.get('/auth/logout', logout)
 
 
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-port = 5000;
-}
+let port = process.env.PORT || 3000;
+
 
 
 
