@@ -24,7 +24,7 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-mongoose.connect('mongodb://127.0.0.1/blogposts', {useNewUrlParser: true}).then(() => console.log('mongoose connected')).catch(err => console.log(err));
+mongoose.connect('mongodb+srv://Osi:Obomighie@cluster0.xjzyyvo.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true}).then(() => console.log('mongoose connected')).catch(err => console.log(err));
 
 
 const home = require('./controllers/home');

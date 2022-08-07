@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('layouts/header'); -%>
+    
     <body>
         <!-- Navigation-->
         <%- include('layouts/navbar'); -%>
@@ -11,7 +12,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
                             <h1>Create a New Notion</h1>
-                            <span class="subheading">Have questions? I have answers.</span>
+                            <span class="subheading"></span>
                         </div>
                     </div>
                 </div>
@@ -37,12 +38,22 @@
                                     <label for="title">Title</label>
                                     <div class="invalid-feedback" data-sb-feedback="name:required">A Title is required.</div>
                                 </div>
+                                <br>
                                 
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="body" placeholder="Enter your thought here..." style="height: 15rem" data-sb-validations="required" name="body" required></textarea>
-                                    <label for="body">Body</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A thought is required</div>
-                                </div>
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls">
+                                    <textarea id="body" name="body" class="form-control"></textarea>
+                                    <script>
+                                    $('#body').summernote({
+                                    placeholder: 'Write your thoughts here...',
+                                    tabsize: 2,
+                                    height: 200
+                                    });
+                                    </script>
+                                    </div>
+                                    </div>
+                                    
+
                                 <br/>
                                 <div class="form-floating">
                                     <input class="form-control" id="author" type="text" placeholder="Author" data-sb-validations="required" name="author" required/>
@@ -83,5 +94,12 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+            $('#summernote').summernote({
+              placeholder: 'Enter your thought here...',
+              tabsize: 2,
+              height: 100
+            });
+          </script>
     </body>
 </html>
