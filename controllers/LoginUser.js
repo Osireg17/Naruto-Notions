@@ -1,6 +1,6 @@
 //This file is going to be used to check if the username and password are correct and therefore login the user in the system.
-
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcrypt');
 const User = require('../models/User');
 
 module.exports = async (req, res) => {
