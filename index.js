@@ -72,13 +72,13 @@ app.get('/auth/logout', logout)
 
 
 
-let port = process.env.PORT || 3000;
 
 
 
 
 
-app.listen(port, ()=>{
-    console.log('App listening...')
-    })
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log('server started');
+} );
     
