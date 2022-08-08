@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
 require('mongoose-type-email')
 var uniqueValidator = require('mongoose-unique-validator');
+const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema({
     email: {type: mongoose.SchemaTypes.Email, required: [true, 'Email is required'], unique: true},
@@ -23,6 +23,8 @@ userSchema.pre('save', function(next){ //This is the pre-save hook, it is going 
         next();
     })
 })
+
+
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
