@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 // const bcrypt = require('bcrypt');
 const User = require('../models/User');
 
-module.exports = async (req, res) => {
+module.exports = (req, res) => {
     const { username, password } = req.body;
     User.findOne({ username: username }, (err, user) => {
         if(user){
