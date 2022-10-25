@@ -2,10 +2,10 @@ const path = require('path');
 const express = require('express');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
-const BlogPost = require('./models/blogposts');
+const BlogPost = require('../models/blogposts');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
-const newPost = require('./controllers/newPost');
+const newPost = require('../controllers/newPost');
 const session = require('express-session');
 const flash = require('connect-flash');
 
@@ -27,17 +27,17 @@ app.use(session({
 mongoose.connect('mongodb+srv://Osi:Obomighie@cluster0.xjzyyvo.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true}).then(() => console.log('mongoose connected')).catch(err => console.log(err));
 
 
-const home = require('./controllers/home');
-const getPost = require('./controllers/getPost');
-const storePost = require('./controllers/storePost');
-const Validate = require('./controllers/validate');
-const newUser = require('./controllers/newUser');
-const storeUser = require('./controllers/storeUser');
-const login = require('./controllers/login');
-const loginUser = require('./controllers/loginUser');
-const Middleware = require('./middleware/authMiddleware');
-const RedirectLogin = require('./middleware/RedirectMiddleware');
-const logout = require('./controllers/logout');
+const home = require('../controllers/home');
+const getPost = require('../controllers/getPost');
+const storePost = require('../controllers/storePost');
+const Validate = require('../controllers/validate');
+const newUser = require('../controllers/newUser');
+const storeUser = require('../controllers/storeUser');
+const login = require('../controllers/login');
+const loginUser = require('../controllers/loginUser');
+const Middleware = require('../middleware/authMiddleware');
+const RedirectLogin = require('../middleware/RedirectMiddleware');
+const logout = require('../controllers/logout');
 
 
 global.loggedIn = null;
